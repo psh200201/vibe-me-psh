@@ -1,3 +1,184 @@
+/* 모든 요소의 기본 여백·패딩을 없애고, 크기 계산을 border 기준으로 맞춤 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 브랜드색·글자색·배경·그림자를 CSS 변수로 정의 */
+:root {
+  --brand: #6C5CE7;
+  --text: #222222;
+  --text-muted: #888888;
+  --card-bg: #ffffff;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* G마켓 산스 Light(300) 웹폰트 로드 */
+@font-face {
+  font-family: 'GMarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* G마켓 산스 Medium(500) 웹폰트 로드 */
+@font-face {
+  font-family: 'GMarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* G마켓 산스 Bold(700) 웹폰트 로드 */
+@font-face {
+  font-family: 'GMarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* 페이지: 화면 한가운데에 카드 배치 */
 body {
-    background: #182e9d;
+  min-height: 100vh; /* 뷰포트 전체 높이를 잡아야 세로 중앙 정렬이 동작함 */
+  display: flex; /* Flexbox로 자식(main 카드)을 배치 */
+  justify-content: center; /* 가로 방향 정중앙 */
+  align-items: center; /* 세로 방향 정중앙 */
+  color: var(--text);
+}
+
+/* 글자 선택 시 브랜드색 배경 */
+::selection {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* 카드 등장 애니메이션 */
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 명함 카드: 흰 배경, 안쪽 여백, 둥근 모서리, 은은한 그림자 */
+main {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  animation: cardIn 0.6s ease;
+}
+
+/* 프로필 사진 원형 */
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 이름(h1): 30px, 굵기 700 */
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Orbit 폰트를 이름에 적용 */
+.orbit-regular {
+  font-family: "Orbit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 역할(.role): 14px, 흐린 색 */
+.role {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* 소개(.bio): G마켓 산스, 15px, 줄간격 1.6 */
+.bio {
+  font-family: 'GMarketSans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 링크에 브랜드색 적용 */
+.links a {
+  color: var(--brand);
+  text-decoration: none; /* 링크 밑줄 제거 */
+  transition: color 0.15s ease;
+}
+
+.links a:hover {
+  color: #ffc886; /* hover 시 살짝 어두운 브랜드색 */
+}
+
+/* 링크를 가로 한 줄로 배치 */
+.links {
+  display: flex; /* Flexbox로 링크를 한 줄 배치 */
+  justify-content: center; /* 링크 묶음을 가운데 정렬 */
+  gap: 20px; /* 링크 사이 간격은 gap 사용 */
+}
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-family: inherit; /* 버튼 글꼴 상속 */
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease,
+              box-shadow 0.15s ease,
+              background 0.15s ease;
+}
+
+.btn:hover {
+  background: #5849c9; /* hover 시 색 변화 */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(108, 92, 231, 0.35);
+}
+
+/* 모달 배경(오버레이) */
+.modal {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* 모달 박스 */
+.modal_box {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  transform: translateY(12px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modal.is-open .modal_box {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
