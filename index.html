@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
+  <main>
+    <header>
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/312369518?s=400&u=f2745881f623b1250dc3e5a671101ea499c17bcb&v=4" alt="박상혁 프로필 사진" />
+        <h1 class="orbit-regular">박상혁</h1>
+        <p class="role">동국대 AI 학부 </p>
+        <p>Hello! I'm a web developer.</p>
+    </header>
     
-    <script src="script.js"></script>
+
+    <section class="bio">
+        <p>안녕하세요, 저는 박상혁입니다. 저는 웹 개발자가 되기 위해 노력하고 있습니다.</p>
+    </section>
+
+    <nav class="links">
+        <a href="https://github.com/psh200201" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://instagram.com/psh0201" target="_blank"><i class="fa-brands fa-square-instagram"></i> Instagram</a>
+    </nav>
+    
+    <button class="btn" id="contactBtn">연락처 보기</button>
+    <button class="btn" id="emailBtn">이메일 보기</button>
+    <footer> 2026 SANGHYEOK PARK</footer>
+    <div class="modal" id="modal">
+        <div class="modal_box">
+            <h2>연락처</h2>
+            <p>psh20020110@gmail.com</p>
+            <button id="closeBtn">닫기</button>
+        </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
