@@ -1,43 +1,104 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
+        <!-- 기본 SEO -->
+        <title>박상혁 · 바이브 미 | 웹 개발자 명함</title>
+        <meta
+            name="description"
+            content="동국대 AI 학부 박상혁의 디지털 명함입니다. 웹 개발자가 되기 위해 노력하는 박상혁을 소개합니다."
+        />
+        <meta name="keywords" content="박상혁, 웹 개발자, 동국대 AI, 바이브 미, vibe me, 디지털 명함" />
+        <meta name="author" content="박상혁" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://vibe-psh.netlify.app/" />
+
+        <!-- SNS 공유 카드용 (카톡·슬랙·페북 등) -->
+        <meta property="og:title" content="박상혁 · 바이브 미" />
+        <meta property="og:description" content="웹 개발자가 되기 위해 노력하는 동국대 AI 학부 박상혁의 디지털 명함" />
+        <meta property="og:image" content="https://vibe-psh.netlify.app/og.png" />
+        <meta property="og:image:alt" content="박상혁 바이브 미 명함 미리보기" />
+        <meta property="og:url" content="https://vibe-psh.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="바이브 미 · 박상혁" />
+        <meta property="og:locale" content="ko_KR" />
+
+        <!-- 트위터/X용 -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="박상혁 · 바이브 미" />
+        <meta name="twitter:description" content="웹 개발자가 되기 위해 노력하는 동국대 AI 학부 박상혁의 디지털 명함" />
+        <meta name="twitter:image" content="https://vibe-psh.netlify.app/og.png" />
+
+        <!-- 브라우저 / 파비콘 -->
+        <meta name="theme-color" content="#6C5CE7" />
+        <link rel="icon" href="https://avatars.githubusercontent.com/u/312369518?s=64&v=4" type="image/png" />
+        <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/312369518?s=180&v=4" />
+
+        <!-- 구조화 데이터 (구글 검색용) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "박상혁",
+          "alternateName": "Sanghyeok Park",
+          "url": "https://vibe-psh.netlify.app/",
+          "image": "https://avatars.githubusercontent.com/u/312369518?s=400&v=4",
+          "jobTitle": "웹 개발자",
+          "description": "동국대학교 AI 학부 학생. 웹 개발자가 되기 위해 노력하고 있습니다.",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "동국대학교"
+          },
+          "sameAs": [
+            "https://github.com/psh200201",
+            "https://instagram.com/psh0201"
+          ],
+          "email": "mailto:psh20020110@gmail.com"
+        }
+        </script>
+
+        <!-- 폰트 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
 <body>
   <main>
     <header>
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/312369518?s=400&u=f2745881f623b1250dc3e5a671101ea499c17bcb&v=4" alt="박상혁 프로필 사진" />
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/312369518?s=400&u=f2745881f623b1250dc3e5a671101ea499c17bcb&v=4" width="120" height="120" alt="박상혁 프로필 사진" />
         <h1 class="orbit-regular">박상혁</h1>
         <p class="role">동국대 AI 학부 </p>
         <p>Hello! I'm a web developer.</p>
     </header>
-    
 
-    <section class="bio">
+
+    <section class="bio" aria-label="소개">
         <p>안녕하세요, 저는 박상혁입니다. 저는 웹 개발자가 되기 위해 노력하고 있습니다.</p>
     </section>
 
-    <nav class="links">
-        <a href="https://github.com/psh200201" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="https://instagram.com/psh0201" target="_blank"><i class="fa-brands fa-square-instagram"></i> Instagram</a>
+    <nav class="links" aria-label="소셜 링크">
+        <a href="https://github.com/psh200201" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+        <a href="https://instagram.com/psh0201" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-instagram" aria-hidden="true"></i> Instagram</a>
     </nav>
-    
-    <button class="btn" id="contactBtn">연락처 보기</button>
-    <button class="btn" id="emailBtn">이메일 보기</button>
+
+    <button class="btn" id="contactBtn" type="button">연락처 보기</button>
+    <button class="btn" id="emailBtn" type="button">이메일 보기</button>
     <footer> 2026 SANGHYEOK PARK</footer>
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal_box">
-            <h2>연락처</h2>
+            <h2 id="modalTitle">연락처</h2>
             <p>psh20020110@gmail.com</p>
-            <button id="closeBtn">닫기</button>
+            <button id="closeBtn" type="button">닫기</button>
         </div>
     </div>
   </main>
